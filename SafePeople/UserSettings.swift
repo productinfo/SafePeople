@@ -8,6 +8,8 @@
 import Foundation
 
 class UserSettings: ObservableObject {
+    let defaultMessage = "This is the default message"
+    
     @Published var customMessage: String {
         didSet {
             UserDefaults.standard.set(customMessage, forKey: "customMessage")
@@ -15,6 +17,6 @@ class UserSettings: ObservableObject {
     }
     
     init() {
-        self.customMessage = UserDefaults.standard.object(forKey: "customMessage") as? String ?? ""
+        self.customMessage = UserDefaults.standard.object(forKey: "customMessage") as? String ?? defaultMessage
     }
 }
