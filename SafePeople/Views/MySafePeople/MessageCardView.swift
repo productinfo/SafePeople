@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct MessageCardView: View {
-    @ObservedObject var message: MessageEntity
+    @ObservedObject var userSettings = UserSettings()
+    
+    let text: String
     var body: some View {
-        Text(message.message ?? "Default message goes here.")
+        Text(userSettings.customMessage)
             .font(.subheadline)
             .foregroundColor(.secondary)
             .multilineTextAlignment(.leading)

@@ -9,16 +9,17 @@ import SwiftUI
 
 struct SafePeopleView: View {
     @Environment(\.managedObjectContext) private var viewContext
+    let defaultMsg = DefaultMessage()
+    @EnvironmentObject private var userSettings: UserSettings
     @State var showSideBar: Bool = false
     @State var showAddContactView: Bool = false
     @State var showAddMessageView: Bool = false
+    
     
     // Fetch Request
     @FetchRequest(entity: ContactsEntity.entity(), sortDescriptors: [])
     var persons: FetchedResults<ContactsEntity>
     
-    @FetchRequest(entity: MessageEntity.entity(), sortDescriptors: [])
-    var message: FetchedResults<MessageEntity>
     
     
     // Functions
@@ -30,13 +31,6 @@ struct SafePeopleView: View {
         try? viewContext.save()
     }
     
-    func deleteMessage(at offsets: IndexSet) {
-        for index in offsets {
-            let msg = message[index]
-            viewContext.delete(msg)
-        }
-        try? viewContext.save()
-    }
     
     // Body
     var body: some View {
@@ -64,13 +58,13 @@ struct SafePeopleView: View {
                     }
                     
                     // List Contacts
-                   
+                    List {
                         ForEach(persons) { person in
-                                ContactListItemView(person: person)
-                                
-                            }
-                            .onDelete(perform: deletePerson(at:))
-                    
+                            ContactListItemView(person: person)
+                            
+                        }
+                        .onDelete(perform: deletePerson(at:))
+                        
                         if persons.count == 0 {
                             HStack {
                                 Image(systemName: "exclamationmark.circle")
@@ -80,10 +74,11 @@ struct SafePeopleView: View {
                             .foregroundColor(Color.accentColor)
                             
                         }
+                    }
                     
                 } //: GROUP
                 
-            Spacer()
+                Spacer()
                 
                 // Custom Message
                 Group {
@@ -101,30 +96,20 @@ struct SafePeopleView: View {
                                 Text("edit")
                                     .font(.subheadline)
                             }
-
-                        }
-                       
-                       
-                        ForEach(message) { msg in
-                                MessageCardView(message: msg)
-                        }
-                        .onDelete(perform: deleteMessage(at:))
-                        if message.count == 0 {
-                            HStack {
-                                Image(systemName: "exclamationmark.circle")
-                                Text("Please add a message.")
-                            }
-                            .font(.headline)
-                            .foregroundColor(Color.accentColor)
                             
                         }
+                        
+                        MessageCardView(text: userSettings.customMessage)
+                            .padding()
+                        
+                        
                     }
                     
                     
                 } //: GROUP
                 
                 
-            Spacer()
+                Spacer()
                 
                 
                 
@@ -141,6 +126,10 @@ struct SafePeopleView: View {
                 AddMessageView()
             }
             .background(Color.offWhite.edgesIgnoringSafeArea(.all))
+            .onAppear() {
+                              UITableView.appearance().backgroundColor = UIColor.clear
+                              UITableViewCell.appearance().backgroundColor = UIColor.clear
+                          }
         }
         
         

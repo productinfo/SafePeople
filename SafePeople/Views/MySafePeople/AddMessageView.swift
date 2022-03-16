@@ -7,11 +7,12 @@
 
 import SwiftUI
 
+
 struct AddMessageView: View {
-    @Environment(\.managedObjectContext) private var viewContext
+    @EnvironmentObject private var userSettings: UserSettings
     @Environment (\.presentationMode) var presentationMode
-    
-    @State var message: String = ""
+    @State var newMessage = ""
+
     
     var body: some View {
         NavigationView {
@@ -42,7 +43,7 @@ struct AddMessageView: View {
                                 .foregroundColor(Color.accentColor)
                              
                                 
-                                Text(message != "" ? message : "Create new message below.")
+                        Text(newMessage)
                                     .font(.subheadline)
                                     .multilineTextAlignment(.center)
                                     .foregroundColor(.secondary)
@@ -52,25 +53,15 @@ struct AddMessageView: View {
                            
                             
                             
-                        NeumorphicStyleTextField(textField: TextField("New Custom Message", text: $message), imageName: "plus.message")
+                        NeumorphicStyleTextField(textField: TextField("New Custom Message", text: $newMessage), imageName: "plus.message")
                             .padding()
                             
                             
                             Button {
-                                // Save to core data
-                                guard self.message != "" else {
-                                    return
-                                }
-                                
-                                let newMessage = MessageEntity(context: viewContext)
-                                newMessage.message = message
-                                
-                                do {
-                                    try viewContext.save()
-                                    presentationMode.wrappedValue.dismiss()
-                                } catch {
-                                    print(error.localizedDescription)
-                                }
+                                // Save
+                                userSettings.customMessage = newMessage
+                                presentationMode.wrappedValue.dismiss()
+                        
                             
                             } label: {
                                 Text("Save")

@@ -14,6 +14,7 @@
 		1826BBDF27E135EB004DC52F /* InfoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826BBDE27E135EB004DC52F /* InfoCardView.swift */; };
 		1826BBE127E1465F004DC52F /* MessageCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826BBE027E1465F004DC52F /* MessageCardView.swift */; };
 		1826BBE327E148CC004DC52F /* DefaultMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826BBE227E148CC004DC52F /* DefaultMessage.swift */; };
+		1826BBE527E15CD5004DC52F /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826BBE427E15CD5004DC52F /* UserSettings.swift */; };
 		18582C3527D577B100ABECD5 /* SafePeopleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18582C3427D577B100ABECD5 /* SafePeopleApp.swift */; };
 		18582C3727D577B100ABECD5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18582C3627D577B100ABECD5 /* ContentView.swift */; };
 		18582C3927D577B200ABECD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18582C3827D577B200ABECD5 /* Assets.xcassets */; };
@@ -24,7 +25,6 @@
 		18582C4B27D5A17800ABECD5 /* NavigationTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18582C4A27D5A17800ABECD5 /* NavigationTitleView.swift */; };
 		18582C4D27D5A20300ABECD5 /* HamburgerMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18582C4C27D5A20300ABECD5 /* HamburgerMenuButton.swift */; };
 		18B5A10F27DD56F400F0C89F /* ContactListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5A10E27DD56F400F0C89F /* ContactListItemView.swift */; };
-		18B5A11127DD85BD00F0C89F /* HalfSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5A11027DD85BD00F0C89F /* HalfSheetView.swift */; };
 		18B5A11427DD891000F0C89F /* AddContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5A11327DD891000F0C89F /* AddContactView.swift */; };
 		18B5A11727DD8B0F00F0C89F /* iPhoneNumberField in Frameworks */ = {isa = PBXBuildFile; productRef = 18B5A11627DD8B0F00F0C89F /* iPhoneNumberField */; };
 		18D3E30627D6AD3D0058B703 /* SidebarContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3E30527D6AD3D0058B703 /* SidebarContent.swift */; };
@@ -44,6 +44,7 @@
 		1826BBDE27E135EB004DC52F /* InfoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCardView.swift; sourceTree = "<group>"; };
 		1826BBE027E1465F004DC52F /* MessageCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCardView.swift; sourceTree = "<group>"; };
 		1826BBE227E148CC004DC52F /* DefaultMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultMessage.swift; sourceTree = "<group>"; };
+		1826BBE427E15CD5004DC52F /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		18582C3127D577B100ABECD5 /* SafePeople.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafePeople.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18582C3427D577B100ABECD5 /* SafePeopleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafePeopleApp.swift; sourceTree = "<group>"; };
 		18582C3627D577B100ABECD5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,7 +56,6 @@
 		18582C4A27D5A17800ABECD5 /* NavigationTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTitleView.swift; sourceTree = "<group>"; };
 		18582C4C27D5A20300ABECD5 /* HamburgerMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerMenuButton.swift; sourceTree = "<group>"; };
 		18B5A10E27DD56F400F0C89F /* ContactListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListItemView.swift; sourceTree = "<group>"; };
-		18B5A11027DD85BD00F0C89F /* HalfSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfSheetView.swift; sourceTree = "<group>"; };
 		18B5A11327DD891000F0C89F /* AddContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactView.swift; sourceTree = "<group>"; };
 		18D3E30527D6AD3D0058B703 /* SidebarContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarContent.swift; sourceTree = "<group>"; };
 		18D3E30927D6D3EF0058B703 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -105,8 +105,9 @@
 		18582C3327D577B100ABECD5 /* SafePeople */ = {
 			isa = PBXGroup;
 			children = (
-				18E18B8927DFD4FF007977B6 /* Persistence.swift */,
+				1826BBE427E15CD5004DC52F /* UserSettings.swift */,
 				18E18B8627DFD4BE007977B6 /* SafePeople.xcdatamodeld */,
+				18E18B8927DFD4FF007977B6 /* Persistence.swift */,
 				18582C3427D577B100ABECD5 /* SafePeopleApp.swift */,
 				180E619527DC305500192330 /* Models */,
 				18582C4527D5998300ABECD5 /* Views */,
@@ -139,10 +140,9 @@
 				18582C4627D5999600ABECD5 /* SimpleButtonStyle.swift */,
 				18582C3627D577B100ABECD5 /* ContentView.swift */,
 				18D3E30927D6D3EF0058B703 /* MainView.swift */,
-				18B5A11227DD887200F0C89F /* MySafePeople */,
 				180E619A27DC346C00192330 /* ResourceView.swift */,
 				180E619C27DC34A800192330 /* SettingsView.swift */,
-				18B5A11027DD85BD00F0C89F /* HalfSheetView.swift */,
+				18B5A11227DD887200F0C89F /* MySafePeople */,
 				18582C4E27D5A6A500ABECD5 /* Navigation */,
 				18D3E30D27D6D9610058B703 /* Sidebar */,
 				18E18B8B27DFEB76007977B6 /* NeuomorphicStyleTextfield.swift */,
@@ -260,7 +260,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				180E619D27DC34A800192330 /* SettingsView.swift in Sources */,
-				18B5A11127DD85BD00F0C89F /* HalfSheetView.swift in Sources */,
 				18582C4927D5A0D300ABECD5 /* AppTitleView.swift in Sources */,
 				18582C4427D5987800ABECD5 /* ColorManager.swift in Sources */,
 				18E18B8C27DFEB76007977B6 /* NeuomorphicStyleTextfield.swift in Sources */,
@@ -273,6 +272,7 @@
 				18582C4D27D5A20300ABECD5 /* HamburgerMenuButton.swift in Sources */,
 				18E18B8827DFD4BE007977B6 /* SafePeople.xcdatamodeld in Sources */,
 				18D3E30A27D6D3EF0058B703 /* MainView.swift in Sources */,
+				1826BBE527E15CD5004DC52F /* UserSettings.swift in Sources */,
 				18582C4727D5999600ABECD5 /* SimpleButtonStyle.swift in Sources */,
 				18582C4B27D5A17800ABECD5 /* NavigationTitleView.swift in Sources */,
 				18D3E30627D6AD3D0058B703 /* SidebarContent.swift in Sources */,

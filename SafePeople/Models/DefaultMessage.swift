@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct DefaultMessage {
+class DefaultMessage {
     let message = "This is the default message that will be sent if the user doesn't add a custom message."
 }
