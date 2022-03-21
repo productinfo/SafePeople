@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SafePeopleView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    let defaultMsg = DefaultMessage()
+    let defaultMsg = Message()
     @EnvironmentObject private var userSettings: UserSettings
     @State var showSideBar: Bool = false
     @State var showAddContactView: Bool = false
@@ -35,10 +35,7 @@ struct SafePeopleView: View {
     // Body
     var body: some View {
         
-        NavigationView {
-            
-            
-            VStack(alignment: .leading, spacing: 10) {
+            VStack(alignment: .leading, spacing: 5) {
                 
                 // My Safe People
                 Group {
@@ -46,8 +43,8 @@ struct SafePeopleView: View {
                         Text("My Safe People")
                             .font(.headline)
                             .foregroundColor(Color.accentColor)
-                        Spacer()
                         
+                        Spacer()
                         Button {
                             showAddContactView.toggle()
                         } label: {
@@ -109,7 +106,7 @@ struct SafePeopleView: View {
                 } //: GROUP
                 
                 
-                Spacer()
+                
                 
                 
                 
@@ -130,7 +127,8 @@ struct SafePeopleView: View {
                               UITableView.appearance().backgroundColor = UIColor.clear
                               UITableViewCell.appearance().backgroundColor = UIColor.clear
                           }
-        }
+            .navigationTitle("My Safe People")
+        
         
         
         
@@ -145,5 +143,6 @@ struct SafePeopleView: View {
 struct SafePeopleView_Previews: PreviewProvider {
     static var previews: some View {
         SafePeopleView()
+            .environmentObject(UserSettings())
     }
 }

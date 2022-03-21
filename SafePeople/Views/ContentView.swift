@@ -13,6 +13,8 @@ struct ContentView: View {
     @State private var menuButtonPressed: Bool = false
     @State private var isShowingDetailView: Bool = false
     
+    
+    
     var body: some View {
         
         let drag = DragGesture()
@@ -62,6 +64,8 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .preferredColorScheme(.dark)
+            .environmentObject(UserSettings())
         
     }
 }

@@ -11,6 +11,7 @@ import iPhoneNumberField
 struct AddContactView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @Environment (\.presentationMode) var presentationMode
+    let message = Message()
     
     @State var name: String = ""
     @State var number: String = ""
@@ -66,8 +67,8 @@ struct AddContactView: View {
                     newPerson.id = UUID()
                     
                     // Sends message to contact when added
-                    //
-                    //
+                    message.sendAddContactMsg(message: message.addContactMessage, phone: number)
+                    
                     
                     // SAVE TO CORE DATA
                     do {
