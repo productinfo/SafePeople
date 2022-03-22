@@ -24,6 +24,7 @@ struct ResourceView: View {
                             .foregroundColor(.accentColor)
                     }
                     .padding()
+                    
         }
        
             Group {
@@ -42,7 +43,7 @@ struct ResourceView: View {
                     .padding(.vertical, 4)
             }
          
-            
+            Spacer()
         }
         
         .navigationTitle("Resources")
