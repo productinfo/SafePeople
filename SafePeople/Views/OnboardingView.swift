@@ -9,21 +9,23 @@ import SwiftUI
 
 struct OnboardingView: View {
     
+    init() {
+        UIPageControl.appearance().currentPageIndicatorTintColor = UIColor(.accentColor)
+       UIPageControl.appearance().pageIndicatorTintColor = UIColor.black.withAlphaComponent(0.2)
+       }
+    
     var body: some View {
         TabView {
-            OnboardingPageView(image: "sisters", title: "Don't Struggle in Silence", text: "We all have different things we struggle with. For some it may be an addiction, others may struggle with depression or anxiety, and some just need some help reaching their goals. Don't struggle alone! Safe People is here to help make reaching out for help easier!", scrollOne: "smallcircle.filled.circle.fill", scrollTwo: "smallcircle.filled.circle", scrollThree: "smallcircle.filled.circle")
+            OnboardingPageView(image: "sisters", title: "Don't Struggle in Silence",
+                               text: K.Onboarding.pageOneText)
             
             OnboardingPageView(image: "man",
                                title: "Reach Out for Help",
-                               text: "Reaching out for help is as easy as a press of a button. When you feel tempted, triggered, or in need of help, open the app and press the Safe Button. This will create a message that will be all ready to send to your trusted people!",
-                               scrollOne: "smallcircle.filled.circle",
-                               scrollTwo: "smallcircle.filled.circle.fill",
-                               scrollThree: "smallcircle.filled.circle")
+                               text: K.Onboarding.pageTwoText)
             
-            OnboardingPageView(image: "iphone", title: "Getting Started", text: "Open the app, add a Safe Person (or a few), add a custom message, and let your Safe People know they're on your list of trusted people.", scrollOne: "smallcircle.filled.circle", scrollTwo: "smallcircle.filled.circle", scrollThree: "smallcircle.filled.circle.fill")
-            
-            
-                
+            OnboardingPageView(image: "iphone", title: "Getting Started",
+                               text: K.Onboarding.pageThreeText)
+   
         }
         .tabViewStyle(PageTabViewStyle())
         .background(Color.offWhite)

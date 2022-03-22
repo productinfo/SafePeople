@@ -8,7 +8,7 @@
 import Foundation
 
 class UserSettings: ObservableObject {
-    let defaultMessage = "This is the default message"
+    let defaultMessage = "Hi! I've hit my 'SAFE' button on the Safe People app because I'm struggling and am in need of some support."
     
     @Published var customMessage: String {
         didSet {

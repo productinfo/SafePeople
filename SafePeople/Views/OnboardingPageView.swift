@@ -11,9 +11,7 @@ struct OnboardingPageView: View {
     let image: String
     let title: String
     let text: String
-    let scrollOne: String
-    let scrollTwo: String
-    let scrollThree: String
+ 
 
     
     var body: some View {
@@ -40,21 +38,13 @@ struct OnboardingPageView: View {
                 
                 HStack {
                     Text(text)
-                        .font(.body)
-                        .lineSpacing(5)
+                        .font(.subheadline)
+                        .lineSpacing(2)
                         .foregroundColor(Color.accentColor)
                     Spacer()
                 }
                 .padding(.horizontal, 30)
                 
-                HStack {
-                    Image(systemName: scrollOne)
-                    
-                    Image(systemName: scrollTwo)
-                    Image(systemName: scrollThree)
-                }
-                .foregroundColor(.accentColor)
-                .padding()
                 Spacer()
                 
                 StartButtonView()
@@ -71,6 +61,6 @@ struct OnboardingPageView: View {
 
 struct OnboardingPageView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingPageView(image: "iphone", title: "Safe People", text: "Do you find yourself struggling in a certain area of your life and need any easy way to reach out for help?", scrollOne: "smallcircle.filled.circle.fill", scrollTwo: "smallcircle.filled.circle", scrollThree: "smallcircle.filled.circle")
+        OnboardingPageView(image: "iphone", title: "Safe People", text: "Do you find yourself struggling in a certain area of your life and need any easy way to reach out for help?")
     }
 }

@@ -20,13 +20,13 @@ struct SettingsView: View {
                         .padding(.vertical, 4)
                     
                     HStack(alignment: .center, spacing: 10) {
-                        Image("Logo")
+                        Image("appLogo")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 80, height: 80)
                             .cornerRadius(9)
                         
-                        Text("Safe People is an app dedicated to helping people by making it easier to reach out for help when help is needed.")
+                        Text("Safe People is an app dedicated to helping you step out of isolation by making it easier to reach out to those you consider safe.")
                             .font(.footnote)
                     }
                 } label: {

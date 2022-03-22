@@ -31,8 +31,8 @@ struct MainView: View {
             // SAFE BUTTON
             Button {
                 // action
-                safeButtonIsPressed.toggle()
                 haptic.impactOccurred()
+                safeButtonIsPressed.toggle()
                 
                 if persons.isEmpty {
                     alertIsShowing.toggle()
@@ -52,10 +52,15 @@ struct MainView: View {
                 safeButtonIsPressed.toggle()
                 
             } label: {
+                VStack {
+                    Text("SAFE")
+                        .foregroundColor(safeButtonIsPressed ? Color.white : Color.accentColor)
+                        .font(.system(size: 32, weight: .bold))
+                    Text("button")
+                        .foregroundColor(.secondary)
+                        .font(.headline)
+                }
                 
-                Text("Safe Button")
-                    .foregroundColor(safeButtonIsPressed ? Color.white : Color.accentColor)
-                    .font(.system(size: 32, weight: .bold, design: .rounded))
                 
             }
             .buttonStyle(SimpleButtonStyle())

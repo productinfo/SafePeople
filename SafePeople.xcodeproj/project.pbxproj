@@ -30,6 +30,8 @@
 		18582C4927D5A0D300ABECD5 /* AppTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18582C4827D5A0D300ABECD5 /* AppTitleView.swift */; };
 		18582C4B27D5A17800ABECD5 /* NavigationTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18582C4A27D5A17800ABECD5 /* NavigationTitleView.swift */; };
 		18582C4D27D5A20300ABECD5 /* HamburgerMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18582C4C27D5A20300ABECD5 /* HamburgerMenuButton.swift */; };
+		189800DB27EA82EC00FAD879 /* MessageExampleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189800DA27EA82EC00FAD879 /* MessageExampleCardView.swift */; };
+		189800DE27EA8F0700FAD879 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189800DD27EA8F0700FAD879 /* Constants.swift */; };
 		18B5A10F27DD56F400F0C89F /* ContactListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5A10E27DD56F400F0C89F /* ContactListItemView.swift */; };
 		18B5A11427DD891000F0C89F /* AddContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5A11327DD891000F0C89F /* AddContactView.swift */; };
 		18B5A11727DD8B0F00F0C89F /* iPhoneNumberField in Frameworks */ = {isa = PBXBuildFile; productRef = 18B5A11627DD8B0F00F0C89F /* iPhoneNumberField */; };
@@ -67,6 +69,8 @@
 		18582C4827D5A0D300ABECD5 /* AppTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTitleView.swift; sourceTree = "<group>"; };
 		18582C4A27D5A17800ABECD5 /* NavigationTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTitleView.swift; sourceTree = "<group>"; };
 		18582C4C27D5A20300ABECD5 /* HamburgerMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerMenuButton.swift; sourceTree = "<group>"; };
+		189800DA27EA82EC00FAD879 /* MessageExampleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageExampleCardView.swift; sourceTree = "<group>"; };
+		189800DD27EA8F0700FAD879 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		18B5A10E27DD56F400F0C89F /* ContactListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListItemView.swift; sourceTree = "<group>"; };
 		18B5A11327DD891000F0C89F /* AddContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactView.swift; sourceTree = "<group>"; };
 		18D3E30527D6AD3D0058B703 /* SidebarContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarContent.swift; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				18582C4327D5987800ABECD5 /* ColorManager.swift */,
+				189800DD27EA8F0700FAD879 /* Constants.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -162,15 +167,13 @@
 				18582C4627D5999600ABECD5 /* SimpleButtonStyle.swift */,
 				18582C3627D577B100ABECD5 /* ContentView.swift */,
 				18D3E30927D6D3EF0058B703 /* MainView.swift */,
-				180E619A27DC346C00192330 /* ResourceView.swift */,
+				189800DC27EA8E2A00FAD879 /* Resources */,
 				18B5A11227DD887200F0C89F /* MySafePeople */,
 				18582C4E27D5A6A500ABECD5 /* Navigation */,
 				18D3E30D27D6D9610058B703 /* Sidebar */,
 				1842A87027E93D9600F5CE7A /* Settings */,
-				18E18B8B27DFEB76007977B6 /* NeuomorphicStyleTextfield.swift */,
 				1848815A27E67AEF00D2ECCD /* OnboardingView.swift */,
 				1848815C27E67B6100D2ECCD /* OnboardingPageView.swift */,
-				1842A87527E9502700F5CE7A /* ResourceRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -185,9 +188,19 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
+		189800DC27EA8E2A00FAD879 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				180E619A27DC346C00192330 /* ResourceView.swift */,
+				1842A87527E9502700F5CE7A /* ResourceRowView.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		18B5A11227DD887200F0C89F /* MySafePeople */ = {
 			isa = PBXGroup;
 			children = (
+				18E18B8B27DFEB76007977B6 /* NeuomorphicStyleTextfield.swift */,
 				18D3E30E27D6D9860058B703 /* SafePeopleView.swift */,
 				18B5A10E27DD56F400F0C89F /* ContactListItemView.swift */,
 				18B5A11327DD891000F0C89F /* AddContactView.swift */,
@@ -196,6 +209,7 @@
 				1826BBDE27E135EB004DC52F /* InfoCardView.swift */,
 				1826BBE027E1465F004DC52F /* MessageCardView.swift */,
 				1848815E27E686C600D2ECCD /* StartButtonView.swift */,
+				189800DA27EA82EC00FAD879 /* MessageExampleCardView.swift */,
 			);
 			path = MySafePeople;
 			sourceTree = "<group>";
@@ -292,6 +306,7 @@
 				18E18B8C27DFEB76007977B6 /* NeuomorphicStyleTextfield.swift in Sources */,
 				18D3E30F27D6D9860058B703 /* SafePeopleView.swift in Sources */,
 				18D3E30C27D6D5430058B703 /* MenuItemView.swift in Sources */,
+				189800DE27EA8F0700FAD879 /* Constants.swift in Sources */,
 				18B5A10F27DD56F400F0C89F /* ContactListItemView.swift in Sources */,
 				18E18B8A27DFD4FF007977B6 /* Persistence.swift in Sources */,
 				1826BBE327E148CC004DC52F /* Message.swift in Sources */,
@@ -306,6 +321,7 @@
 				18D3E30627D6AD3D0058B703 /* SidebarContent.swift in Sources */,
 				180E619B27DC346C00192330 /* ResourceView.swift in Sources */,
 				1848815B27E67AEF00D2ECCD /* OnboardingView.swift in Sources */,
+				189800DB27EA82EC00FAD879 /* MessageExampleCardView.swift in Sources */,
 				1826BBDD27E12E1F004DC52F /* MessageExamplesView.swift in Sources */,
 				18582C3727D577B100ABECD5 /* ContentView.swift in Sources */,
 				18B5A11427DD891000F0C89F /* AddContactView.swift in Sources */,
@@ -372,7 +388,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -427,7 +443,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
