@@ -9,6 +9,7 @@ import SwiftUI
 
 struct NavigationTitleView: View {
     @Binding var showSideBar: Bool
+    let haptic = UIImpactFeedbackGenerator(style: .medium)
     
     var body: some View {
         
@@ -19,6 +20,7 @@ struct NavigationTitleView: View {
                 Button {
                     // Show menu
                     showSideBar.toggle()
+                    haptic.impactOccurred()
                 } label: {
                     HamburgerMenuButton()
                 }

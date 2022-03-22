@@ -9,10 +9,44 @@ import SwiftUI
 
 struct ResourceView: View {
     var body: some View {
-        VStack {
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+       
+            VStack(alignment: .leading) {
+                Group {
+                    HStack {
+                        Text("Here are a few resources you may find helpful.")
+                        .font(.headline)
+                        .foregroundColor(.accentColor)
+                       
+                        Spacer()
+                        
+                        Image(systemName: "book.circle")
+                            .font(.title)
+                            .foregroundColor(.accentColor)
+                    }
+                    .padding()
         }
+       
+            Group {
+                ResourceRowView(name: "Suicide Hotline", content: "1-800-273-8255")
+               
+                 ResourceRowView(name: "Alcoholics Anonymous", linkLabel: "Website", linkDestination: "www.aa.org/")
+                 
+                 ResourceRowView(name: "Pure Desire Ministries", linkLabel: "Website", linkDestination: "www.puredesire.org")
+                
+                 ResourceRowView(name: "Domestic Violence Hotline", content: "1-800-799-7233")
+                 
+                 ResourceRowView(name: "Veteran's Crisis Line", content: "1-800-273-8255")
+                 
+                 ResourceRowView(name: "Find Treatment", linkLabel: "Website", linkDestination: "www.findtreatment.gov/")
+                Divider()
+                    .padding(.vertical, 4)
+            }
+         
+            
+        }
+        
         .navigationTitle("Resources")
+        
             
     }
 }

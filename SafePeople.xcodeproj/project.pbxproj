@@ -15,6 +15,9 @@
 		1826BBE127E1465F004DC52F /* MessageCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826BBE027E1465F004DC52F /* MessageCardView.swift */; };
 		1826BBE327E148CC004DC52F /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826BBE227E148CC004DC52F /* Message.swift */; };
 		1826BBE527E15CD5004DC52F /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826BBE427E15CD5004DC52F /* UserSettings.swift */; };
+		1842A87227E93DC900F5CE7A /* SettingsLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842A87127E93DC900F5CE7A /* SettingsLabelView.swift */; };
+		1842A87427E93E7E00F5CE7A /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842A87327E93E7E00F5CE7A /* SettingsRowView.swift */; };
+		1842A87627E9502700F5CE7A /* ResourceRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842A87527E9502700F5CE7A /* ResourceRowView.swift */; };
 		1848815B27E67AEF00D2ECCD /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1848815A27E67AEF00D2ECCD /* OnboardingView.swift */; };
 		1848815D27E67B6100D2ECCD /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1848815C27E67B6100D2ECCD /* OnboardingPageView.swift */; };
 		1848815F27E686C600D2ECCD /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1848815E27E686C600D2ECCD /* StartButtonView.swift */; };
@@ -48,6 +51,9 @@
 		1826BBE027E1465F004DC52F /* MessageCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCardView.swift; sourceTree = "<group>"; };
 		1826BBE227E148CC004DC52F /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		1826BBE427E15CD5004DC52F /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		1842A87127E93DC900F5CE7A /* SettingsLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLabelView.swift; sourceTree = "<group>"; };
+		1842A87327E93E7E00F5CE7A /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
+		1842A87527E9502700F5CE7A /* ResourceRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceRowView.swift; sourceTree = "<group>"; };
 		1848815A27E67AEF00D2ECCD /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		1848815C27E67B6100D2ECCD /* OnboardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
 		1848815E27E686C600D2ECCD /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
@@ -90,6 +96,16 @@
 				1826BBE227E148CC004DC52F /* Message.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		1842A87027E93D9600F5CE7A /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				180E619C27DC34A800192330 /* SettingsView.swift */,
+				1842A87127E93DC900F5CE7A /* SettingsLabelView.swift */,
+				1842A87327E93E7E00F5CE7A /* SettingsRowView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		18582C2827D577B100ABECD5 = {
@@ -147,13 +163,14 @@
 				18582C3627D577B100ABECD5 /* ContentView.swift */,
 				18D3E30927D6D3EF0058B703 /* MainView.swift */,
 				180E619A27DC346C00192330 /* ResourceView.swift */,
-				180E619C27DC34A800192330 /* SettingsView.swift */,
 				18B5A11227DD887200F0C89F /* MySafePeople */,
 				18582C4E27D5A6A500ABECD5 /* Navigation */,
 				18D3E30D27D6D9610058B703 /* Sidebar */,
+				1842A87027E93D9600F5CE7A /* Settings */,
 				18E18B8B27DFEB76007977B6 /* NeuomorphicStyleTextfield.swift */,
 				1848815A27E67AEF00D2ECCD /* OnboardingView.swift */,
 				1848815C27E67B6100D2ECCD /* OnboardingPageView.swift */,
+				1842A87527E9502700F5CE7A /* ResourceRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -278,6 +295,7 @@
 				18B5A10F27DD56F400F0C89F /* ContactListItemView.swift in Sources */,
 				18E18B8A27DFD4FF007977B6 /* Persistence.swift in Sources */,
 				1826BBE327E148CC004DC52F /* Message.swift in Sources */,
+				1842A87227E93DC900F5CE7A /* SettingsLabelView.swift in Sources */,
 				1826BBE127E1465F004DC52F /* MessageCardView.swift in Sources */,
 				18582C4D27D5A20300ABECD5 /* HamburgerMenuButton.swift in Sources */,
 				18E18B8827DFD4BE007977B6 /* SafePeople.xcdatamodeld in Sources */,
@@ -291,6 +309,8 @@
 				1826BBDD27E12E1F004DC52F /* MessageExamplesView.swift in Sources */,
 				18582C3727D577B100ABECD5 /* ContentView.swift in Sources */,
 				18B5A11427DD891000F0C89F /* AddContactView.swift in Sources */,
+				1842A87427E93E7E00F5CE7A /* SettingsRowView.swift in Sources */,
+				1842A87627E9502700F5CE7A /* ResourceRowView.swift in Sources */,
 				1848815D27E67B6100D2ECCD /* OnboardingPageView.swift in Sources */,
 				1826BBDF27E135EB004DC52F /* InfoCardView.swift in Sources */,
 				18582C3527D577B100ABECD5 /* SafePeopleApp.swift in Sources */,
