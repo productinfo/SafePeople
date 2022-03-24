@@ -16,14 +16,14 @@ struct OnboardingView: View {
     
     var body: some View {
         TabView {
-            OnboardingPageView(image: "sisters", title: "Don't Struggle in Silence",
+            OnboardingPageView(image: "man", title: "Don't Struggle in Silence",
                                text: K.Onboarding.pageOneText)
             
-            OnboardingPageView(image: "man",
+            OnboardingPageView(image: "iphone",
                                title: "Reach Out for Help",
                                text: K.Onboarding.pageTwoText)
             
-            OnboardingPageView(image: "iphone", title: "Getting Started",
+            OnboardingPageView(image: "phoneFront", title: "Getting Started",
                                text: K.Onboarding.pageThreeText)
    
         }

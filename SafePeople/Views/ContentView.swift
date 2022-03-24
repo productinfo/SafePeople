@@ -42,7 +42,7 @@ struct ContentView: View {
                     HStack {
                         Spacer()
                         SidebarContent(menuButtonPressed: $menuButtonPressed, isShowingDetailView: $isShowingDetailView, showMenu: $showSidebar)
-                            .offset(x: showSidebar ? 200 : UIScreen.main.bounds.width)
+                            .offset(x: showSidebar ? UIScreen.main.bounds.width / 2 : UIScreen.main.bounds.width)
                             .animation(Animation.easeInOut.speed(2), value: showSidebar)
                     }
                 }

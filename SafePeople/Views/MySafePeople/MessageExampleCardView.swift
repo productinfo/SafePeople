@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct MessageExampleCardView: View {
+    let title: String
     let text: String
     
     var body: some View {
         VStack(alignment: .leading, spacing: 2) {
             HStack {
-                Text("Message Example")
+                Text(title)
                     .foregroundColor(.accentColor)
                 Spacer()
                 Image(systemName: "lightbulb.circle")
@@ -48,7 +49,7 @@ struct MessageExampleCardView: View {
 
 struct MessageExampleCardView_Previews: PreviewProvider {
     static var previews: some View {
-        MessageExampleCardView(text: "This is a messsage. This is a message.")
+        MessageExampleCardView(title: "Message", text: "This is a messsage. This is a message.")
             .previewLayout(.sizeThatFits)
             .padding()
     }
