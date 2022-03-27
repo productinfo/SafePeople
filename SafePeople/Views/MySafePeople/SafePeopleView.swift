@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+
 struct SafePeopleView: View {
     @Environment(\.managedObjectContext) private var viewContext
     let defaultMsg = Message()
@@ -14,6 +16,9 @@ struct SafePeopleView: View {
     @State var showSideBar: Bool = false
     @State var showAddContactView: Bool = false
     @State var showAddMessageView: Bool = false
+   
+    
+
     
     
     // Fetch Request
@@ -30,6 +35,8 @@ struct SafePeopleView: View {
         }
         try? viewContext.save()
     }
+    
+
     
     
     // Body
@@ -124,8 +131,8 @@ struct SafePeopleView: View {
             }
             .background(Color.offWhite.edgesIgnoringSafeArea(.all))
             .onAppear() {
-                              UITableView.appearance().backgroundColor = UIColor.clear
-                              UITableViewCell.appearance().backgroundColor = UIColor.clear
+                UITableView.appearance().backgroundColor = .clear
+                UITableViewCell.appearance().backgroundColor = .white
                           }
             .navigationTitle("My Safe People")
         

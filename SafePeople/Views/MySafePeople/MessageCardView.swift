@@ -14,12 +14,12 @@ struct MessageCardView: View {
     var body: some View {
         Text(userSettings.customMessage)
             .font(.subheadline)
-            .foregroundColor(.secondary)
+            .foregroundColor(.white)
             .multilineTextAlignment(.leading)
             .lineSpacing(5)
             .frame(maxWidth: 300, maxHeight: .infinity, alignment: .center)
             .padding()
-            .background(.thinMaterial)
+            .background(.gray.opacity(0.7))
             .cornerRadius(6)
     }
 }
