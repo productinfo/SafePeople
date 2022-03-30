@@ -65,6 +65,8 @@ struct SafePeopleView: View {
                     List {
                         ForEach(persons) { person in
                             ContactListItemView(person: person)
+                                .padding()
+                                .listRowSeparatorTint(.accentColor, edges: .all)
                             
                         }
                         .onDelete(perform: deletePerson(at:))
@@ -78,6 +80,10 @@ struct SafePeopleView: View {
                             .foregroundColor(Color.accentColor)
                             
                         }
+                    }
+                    
+                    .toolbar {
+                        EditButton()
                     }
                     
                 } //: GROUP

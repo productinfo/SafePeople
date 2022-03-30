@@ -19,7 +19,7 @@ struct MessageCardView: View {
             .lineSpacing(5)
             .frame(maxWidth: 300, maxHeight: .infinity, alignment: .center)
             .padding()
-            .background(.gray.opacity(0.7))
+            .background(Color.accentColor.opacity(0.5))
             .cornerRadius(6)
     }
 }

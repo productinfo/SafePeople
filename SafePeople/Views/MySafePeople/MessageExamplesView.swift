@@ -15,7 +15,6 @@ struct MessageExamplesView: View {
                 
                 MessageExampleCardView(title: "General", text: "Hi! I've hit my 'SAFE' button on the Safe People app because I feel like giving up right now.")
                 
-                
                 MessageExampleCardView(title: "General", text: "Hi! I've hit my 'SAFE' button on the Safe People app because I feel like I'm falling apart and am reaching out for support.")
                 
                 MessageExampleCardView(title: "General", text: "Hi! I've hit my 'SAFE' button on the Safe People app because I'm in a situation where I know I could easily be tempted or triggered.")

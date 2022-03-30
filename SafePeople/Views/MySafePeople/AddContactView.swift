@@ -14,21 +14,17 @@ struct AddContactView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @Environment (\.presentationMode) var presentationMode
     let message = Message()
-    
+        
     
     @State var name: String = ""
     @State var number: String = ""
     
 // Contacts From Contact Book
    @State var showPicker = false
-    @State var selectedContact: CNContact?
-    @State var showContactNumberSheet = false
-    
-    var fullName: String {
-        return String("\(selectedContact?.givenName) \(selectedContact?.familyName)")
-    }
+    @State var selectedContact: Contact?
     
     
+
     var body: some View {
         
         
@@ -129,15 +125,10 @@ struct AddContactView: View {
         .padding()
         .background(Color.offWhite)
         .sheet(isPresented: self.$showPicker) {
-                    ContactPickerView(showPicker: self.$showPicker, selectedContact: $selectedContact)
+            ContactPickerView(showPicker: self.$showPicker, selectedContact: $selectedContact)
                 }
-        .onChange(of: selectedContact) { selected in
-           // Show sheet of contact info & ability to select number
-            showContactNumberSheet.toggle()
-        }
-        .sheet(isPresented: $showContactNumberSheet) {
-            ContactDetailSheet(contact: selectedContact!)
-        }
+     
+      
      
        
      
@@ -145,8 +136,3 @@ struct AddContactView: View {
 }
 
 
-struct AddContactView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddContactView()
-    }
-}

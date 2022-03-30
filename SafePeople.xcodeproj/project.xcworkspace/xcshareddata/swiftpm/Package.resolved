@@ -17,15 +17,6 @@
         "revision" : "fc8b12831c166e7851c341c2ac5a120c8716304a",
         "version" : "3.3.4"
       }
-    },
-    {
-      "identity" : "swiftui_contactpicker",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/pykaso/SwiftUI_ContactPicker.git",
-      "state" : {
-        "revision" : "7a7a914cd5cab5d91135d1c2b3b497b3e44fc029",
-        "version" : "1.1.0"
-      }
     }
   ],
   "version" : 2

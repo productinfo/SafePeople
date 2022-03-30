@@ -10,24 +10,28 @@ import SwiftUI
 import Contacts
 
 struct ContactRow: View {
-    var contact: CNContact
+    var contact: Contact
     @Binding var showPicker: Bool
-    @Binding var selectedContact: CNContact?
+    @Binding var selectedContact: Contact?
+    
+    var contactName: String {
+        return "\(contact.firstName) \(contact.lastName)"
+    }
     
     var body: some View {
         Button(action: {
             selectContact()
         }) {
             HStack {
-                Text("\(contact.familyName)").fontWeight(.bold)
-                Text("\(contact.givenName) \(contact.middleName)")
+                Text("\(contact.firstName)").fontWeight(.bold)
+                Text("\(contact.lastName)")
             }
             .foregroundColor(.black)
         }
     }
     
     func selectContact() {
-        self.selectedContact = self.contact
+        self.selectedContact = contact
         self.showPicker = false
     }
 }

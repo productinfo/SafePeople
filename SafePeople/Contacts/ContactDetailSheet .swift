@@ -9,7 +9,7 @@ import SwiftUI
 import Contacts
 
 struct ContactDetailSheet: View {
-    var contact: CNContact
+    var contact: Contact
     @Environment(\.managedObjectContext) private var viewContext
     @Environment (\.presentationMode) var presentationMode
     let message = Message()
@@ -17,7 +17,7 @@ struct ContactDetailSheet: View {
     @State private var isSelected = false
     
     var fullName: String {
-        return String(contact.givenName + contact.familyName)
+        return "\(contact.firstName) \(contact.lastName)"
     }
     
     var body: some View {
@@ -25,8 +25,8 @@ struct ContactDetailSheet: View {
             Text(fullName)
             
             Picker("Numbers", selection: $selectedNumber) {
-                ForEach(contact.phoneNumbers, id: \.self)  { number in
-                    Text("\(number.value.stringValue)")
+                ForEach(contact.phoneNumber, id: \.self)  { num in
+                    Text(num ?? "")
                 }
             }
             .pickerStyle(InlinePickerStyle())
@@ -59,7 +59,7 @@ struct ContactDetailSheet: View {
                 Text("Save")
             }
         }
-        .navigationTitle("\(contact.familyName)")
+        .navigationTitle("\(contact.firstName) \(contact.lastName)")
     }
 }
 
