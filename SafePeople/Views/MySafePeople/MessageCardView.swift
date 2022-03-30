@@ -17,7 +17,7 @@ struct MessageCardView: View {
             .foregroundColor(.white)
             .multilineTextAlignment(.leading)
             .lineSpacing(5)
-            .frame(maxWidth: 300, maxHeight: .infinity, alignment: .center)
+            .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: .infinity, alignment: .center)
             .padding()
             .background(Color.accentColor.opacity(0.5))
             .cornerRadius(6)
