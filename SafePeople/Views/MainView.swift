@@ -40,7 +40,7 @@ struct MainView: View {
                     // Create numbers array
                     var numbers: [String] = []
                     for person in persons {
-                        numbers.append(person.number!)
+                            numbers.append(person.number!)
                     }
                     
                     // Send Message

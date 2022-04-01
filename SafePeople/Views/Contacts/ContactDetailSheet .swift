@@ -9,24 +9,28 @@ import SwiftUI
 import Contacts
 
 struct ContactDetailSheet: View {
-    var contact: Contact
     @Environment(\.managedObjectContext) private var viewContext
     @Environment (\.presentationMode) var presentationMode
+    
     let message = Message()
-    @State var selectedNumber: String = ""
-    @State private var isSelected = false
+    var selectedContact: Contact
+    @State var selectedNumberIndex = 0
+   
+    @Binding var showPickerView: Bool
+    
     
     var fullName: String {
-        return "\(contact.firstName) \(contact.lastName)"
+        return "\(selectedContact.firstName) \(selectedContact.lastName)"
     }
     
     var body: some View {
         VStack {
             Text(fullName)
             
-            Picker("Numbers", selection: $selectedNumber) {
-                ForEach(contact.phoneNumber, id: \.self)  { num in
+            Picker("Numbers", selection: $selectedNumberIndex) {
+                ForEach(selectedContact.phoneNumber, id: \.self)  { num in
                     Text(num ?? "")
+                    
                 }
             }
             .pickerStyle(InlinePickerStyle())
@@ -38,12 +42,12 @@ struct ContactDetailSheet: View {
                 // Save to core data
                 let newPerson = ContactsEntity(context: viewContext)
                 newPerson.name = fullName
-                newPerson.number = selectedNumber
+                newPerson.number = selectedContact.phoneNumber[selectedNumberIndex]
                 newPerson.id = UUID()
+       
                 
                 // Sends message to contact when added
-                message.sendAddContactMsg(message: message.addContactMessage, phone: selectedNumber)
-                
+                message.sendAddContactMsg(message: message.addContactMessage, phone: newPerson.number ?? "")
                 
                 // SAVE TO CORE DATA
                 do {
@@ -53,13 +57,13 @@ struct ContactDetailSheet: View {
                     print(error.localizedDescription)
                 }
                 
-                // Dismiss View
+                showPickerView.toggle()
                 
             } label: {
                 Text("Save")
             }
         }
-        .navigationTitle("\(contact.firstName) \(contact.lastName)")
+        .navigationTitle("\(selectedContact.firstName) \(selectedContact.lastName)")
     }
 }
 

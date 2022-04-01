@@ -126,6 +126,7 @@
 				183A0AAC27EFE5DE0095AAAB /* ContactPickerView.swift */,
 				183A0AAE27EFE5FC0095AAAB /* ContactRowView.swift */,
 				183A0AB027EFEAE50095AAAB /* ContactDetailSheet .swift */,
+				18B5A11327DD891000F0C89F /* AddContactView.swift */,
 				1821722527F4F49F000191DE /* Contact.swift */,
 			);
 			path = Contacts;
@@ -163,7 +164,6 @@
 			children = (
 				1807D24627ED3CB900DFF8D3 /* Info.plist */,
 				18E18B8627DFD4BE007977B6 /* SafePeople.xcdatamodeld */,
-				183A0AA727EFE55B0095AAAB /* Contacts */,
 				1826BBE427E15CD5004DC52F /* UserSettings.swift */,
 				18E18B8927DFD4FF007977B6 /* Persistence.swift */,
 				18582C3427D577B100ABECD5 /* SafePeopleApp.swift */,
@@ -196,6 +196,7 @@
 		18582C4527D5998300ABECD5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				183A0AA727EFE55B0095AAAB /* Contacts */,
 				18582C4627D5999600ABECD5 /* SimpleButtonStyle.swift */,
 				18582C3627D577B100ABECD5 /* ContentView.swift */,
 				18D3E30927D6D3EF0058B703 /* MainView.swift */,
@@ -243,7 +244,6 @@
 				18E18B8B27DFEB76007977B6 /* NeuomorphicStyleTextfield.swift */,
 				18D3E30E27D6D9860058B703 /* SafePeopleView.swift */,
 				183A0A8827EFD46A0095AAAB /* ContactListItemView.swift */,
-				18B5A11327DD891000F0C89F /* AddContactView.swift */,
 				1826BBDA27E12B9D004DC52F /* AddMessageView.swift */,
 				1826BBDC27E12E1F004DC52F /* MessageExamplesView.swift */,
 				1826BBDE27E135EB004DC52F /* InfoCardView.swift */,

@@ -14,14 +14,14 @@ struct AddContactView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @Environment (\.presentationMode) var presentationMode
     let message = Message()
+    
         
     
     @State var name: String = ""
     @State var number: String = ""
     
 // Contacts From Contact Book
-   @State var showPicker = false
-    @State var selectedContact: Contact?
+    @State var showPicker = false
     
     
 
@@ -94,10 +94,6 @@ struct AddContactView: View {
                 newPerson.number = number
                 newPerson.id = UUID()
                 
-                // Sends message to contact when added
-                message.sendAddContactMsg(message: message.addContactMessage, phone: number)
-                
-                
                 // SAVE TO CORE DATA
                 do {
                     try viewContext.save()
@@ -105,6 +101,12 @@ struct AddContactView: View {
                 } catch {
                     print(error.localizedDescription)
                 }
+                
+                // Sends message to contact when added
+                message.sendAddContactMsg(message: message.addContactMessage, phone: number)
+                
+                
+            
                 
                 // DISMISS VIEW
                 
@@ -124,8 +126,8 @@ struct AddContactView: View {
         }
         .padding()
         .background(Color.offWhite)
-        .sheet(isPresented: self.$showPicker) {
-            ContactPickerView(showPicker: self.$showPicker, selectedContact: $selectedContact)
+        .sheet(isPresented: $showPicker) {
+            ContactPickerView(showPicker: $showPicker)
                 }
      
       

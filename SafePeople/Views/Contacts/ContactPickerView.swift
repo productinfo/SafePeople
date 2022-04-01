@@ -10,10 +10,11 @@ import XCTest
 
 struct ContactPickerView: View {
     @Binding var showPicker: Bool
-    @Binding var selectedContact: Contact?
+    @State var selectedContact: Contact = Contact.init(firstName: "", lastName: "", phoneNumber: [""])
     let contactsProvider = ContactsProvider()
     @State var contacts = [Contact.init(firstName: "", lastName: "", phoneNumber: [""])]
     @State var showContactNumberSheet = false
+    @State var selectedNumber: String = ""
     
     // Search Functionality
     @State private var searchText = ""
@@ -49,13 +50,14 @@ struct ContactPickerView: View {
         .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
         .sheet(isPresented: $showContactNumberSheet) {
             
-            ContactDetailSheet(contact: selectedContact ?? Contact(firstName: "Not found", lastName: "Not Found", phoneNumber: [""]))
+            ContactDetailSheet(selectedContact: selectedContact, showPickerView: $showPicker)
         }
        
         }
         .onChange(of: selectedContact) { selected in
            // Show sheet of contact info & ability to select number
             showContactNumberSheet.toggle()
+
         }
         
         

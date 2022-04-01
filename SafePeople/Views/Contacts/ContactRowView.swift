@@ -12,7 +12,7 @@ import Contacts
 struct ContactRow: View {
     var contact: Contact
     @Binding var showPicker: Bool
-    @Binding var selectedContact: Contact?
+    @Binding var selectedContact: Contact
     
     var contactName: String {
         return "\(contact.firstName) \(contact.lastName)"
@@ -32,7 +32,6 @@ struct ContactRow: View {
     
     func selectContact() {
         self.selectedContact = contact
-        self.showPicker = false
     }
 }
 

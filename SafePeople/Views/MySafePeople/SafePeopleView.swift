@@ -118,15 +118,7 @@ struct SafePeopleView: View {
                     
                 } //: GROUP
                 
-                
-                
-                
-                
-                
-                
-                // Custom Message
-                // Default Message
-                // Ability to edit message
+
             }
             .padding()
             .sheet(isPresented: $showAddContactView) {
