@@ -69,7 +69,7 @@ struct AddContactView: View {
             iPhoneNumberField(text: $number)
                 .foregroundColor(.darkShadow)
                 .flagSelectable(true)
-                .maximumDigits(12)
+                .maximumDigits(14)
                 .padding()
                 .foregroundColor(.neumorphictextColor)
                 .background(Color.offWhite)

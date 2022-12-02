@@ -22,9 +22,6 @@ struct SafePeopleApp: App {
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
                     .environmentObject(userSettings)
             }
-            
-            
-            
         }
     }
 }

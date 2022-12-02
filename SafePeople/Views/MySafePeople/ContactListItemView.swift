@@ -15,8 +15,6 @@ struct ContactListItemView: View {
             VStack(alignment: .leading, spacing: 5) {
                 Text(person.name ?? "Name not available")
                     .font(.headline)
-                Text(person.number ?? "Number not available")
-                    .font(.subheadline)
             }
             .foregroundColor(.accentColor)
             
