@@ -9,8 +9,8 @@ import SwiftUI
 
 struct MessageCardView: View {
     @ObservedObject var userSettings = UserSettings()
-    
     let text: String
+
     var body: some View {
         Text(userSettings.customMessage)
             .font(.subheadline)

@@ -11,9 +11,7 @@ struct OnboardingPageView: View {
     let image: String
     let title: String
     let text: String
- 
 
-    
     var body: some View {
         ZStack {
             Color.offWhite
@@ -49,12 +47,7 @@ struct OnboardingPageView: View {
                 
                 StartButtonView()
                     .padding(.bottom, 30)
-                    
-               
-                
             }
-            
-        
         }
     }
 }

@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct SettingsRowView: View {
     var name: String
     var content: String?
@@ -34,7 +33,6 @@ struct SettingsRowView: View {
                 } else {
                     EmptyView()
                 }
-            
             }
         }
     }

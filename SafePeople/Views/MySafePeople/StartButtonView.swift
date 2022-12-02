@@ -11,26 +11,18 @@ struct StartButtonView: View {
     @AppStorage("isOnboarding") var isOnboarding: Bool?
     
     var body: some View {
-       
-               
-        
-            Button {
-                isOnboarding = false
-            } label: {
-                Text("Get Started")
-                    .font(.headline)
-                    .padding()
-                    .foregroundColor(.accentColor)
-                    .background(Color.offWhite)
-                    .cornerRadius(6)
-                    .shadow(color: Color.darkShadow, radius: 3, x: 2, y: 2)
-                    .shadow(color: Color.lightShadow, radius: 3, x: -2, y: -2)
-                
-            }
-
-       
-        
-        
+        Button {
+            isOnboarding = false
+        } label: {
+            Text("Get Started")
+                .font(.headline)
+                .padding()
+                .foregroundColor(.accentColor)
+                .background(Color.offWhite)
+                .cornerRadius(6)
+                .shadow(color: Color.darkShadow, radius: 3, x: 2, y: 2)
+                .shadow(color: Color.lightShadow, radius: 3, x: -2, y: -2)
+        }
     }
 }
 

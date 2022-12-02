@@ -59,23 +59,17 @@ struct SettingsView: View {
                     .padding()
                     .background(Color(UIColor.tertiarySystemBackground))
                     .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
-                    
                 } label: {
                     SettingsLabelView(labelText: "Restart", labelImage: "gobackward")
                 }
-                
-                // APPLICATION
+
                 GroupBox {
                     SettingsRowView(name: "Developer", content: "Brittany Rima")
                     SettingsRowView(name: "Collaborator", content: "Sarah Peters")
                     SettingsRowView(name: "Version", content: "1.1.0")
-                    
                 } label: {
                     SettingsLabelView(labelText: "Application", labelImage: "apps.iphone")
                 }
-
-
-
             }
             .padding()
         }

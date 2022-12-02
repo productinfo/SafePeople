@@ -22,28 +22,19 @@ struct MessageExampleCardView: View {
             }
             .font(.headline)
             
-            
-          
             HStack {
                 VStack(alignment: .leading) {
-                        Text(text)
-                            .multilineTextAlignment(.leading)
-                            .font(.footnote)
-                            
-                    }
-                    .padding(.vertical)
-                    
+                    Text(text)
+                        .multilineTextAlignment(.leading)
+                        .font(.footnote)
+                }
+                .padding(.vertical)
             }
             .textSelection(.enabled)
-            
-            
-            
         }
         .padding()
         .background(.thinMaterial)
         .cornerRadius(6)
-        
-          
     }
 }
 

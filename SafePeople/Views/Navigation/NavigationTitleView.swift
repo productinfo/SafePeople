@@ -12,24 +12,16 @@ struct NavigationTitleView: View {
     let haptic = UIImpactFeedbackGenerator(style: .medium)
     
     var body: some View {
-        
-            HStack {
-                AppTitleView()
-                Spacer()
-                
-                Button {
-                    // Show menu
-                    showSideBar.toggle()
-                    haptic.impactOccurred()
-                } label: {
-                    HamburgerMenuButton()
-                }
-
-                
+        HStack {
+            AppTitleView()
+            Spacer()
+            Button {
+                showSideBar.toggle()
+                haptic.impactOccurred()
+            } label: {
+                HamburgerMenuButton()
             }
-            .padding()
-            
-        
+        }
+        .padding()
     }
 }
-
