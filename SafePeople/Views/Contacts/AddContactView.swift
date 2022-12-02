@@ -9,27 +9,16 @@ import SwiftUI
 import iPhoneNumberField
 import Contacts
 
-
 struct AddContactView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @Environment (\.presentationMode) var presentationMode
     let message = Message()
-    
-        
-    
     @State var name: String = ""
     @State var number: String = ""
-    
-// Contacts From Contact Book
     @State var showPicker = false
-    
-    
 
     var body: some View {
-        
-        
         VStack(spacing: 25) {
-            
             HStack {
                 Text("Add Safe Person")
                     .font(.title)
@@ -52,18 +41,14 @@ struct AddContactView: View {
                             .padding(.horizontal)
                         Text("Contact List")
                             .font(.caption2)
-                        
                     }
                 }
-                
             }
             
-            
             // TextField
-            NeumorphicStyleTextField(
-                textField: TextField("Name",
+            NeumorphicStyleTextField(textField: TextField("Name",
                                      text: $name),
-                imageName: "person")
+                                     imageName: "person")
             
             
             iPhoneNumberField(text: $number)
@@ -76,12 +61,7 @@ struct AddContactView: View {
                 .cornerRadius(6)
                 .shadow(color: Color.darkShadow, radius: 3, x: 2, y: 2)
                 .shadow(color: Color.lightShadow, radius: 3, x: -2, y: -2)
-            
-            
-            
-            
-            
-            
+
             Button {
                 // CHECK FOR ERROR
                 guard self.name != "" else {
@@ -101,16 +81,8 @@ struct AddContactView: View {
                 } catch {
                     print(error.localizedDescription)
                 }
-                
                 // Sends message to contact when added
                 message.sendAddContactMsg(message: message.addContactMessage, phone: number)
-                
-                
-            
-                
-                // DISMISS VIEW
-                
-                
             } label: {
                 Text("Save")
                     .font(.headline)
@@ -118,23 +90,14 @@ struct AddContactView: View {
                     .background(Color.accentColor)
                     .foregroundColor(.white)
                     .cornerRadius(12)
-                
             }
             .padding(.top, 40)
             Spacer()
-            
         }
         .padding()
         .background(Color.offWhite)
         .sheet(isPresented: $showPicker) {
             ContactPickerView(showPicker: $showPicker)
-                }
-     
-      
-     
-       
-     
+        }
     }
 }
-
-
