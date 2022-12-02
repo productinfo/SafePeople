@@ -122,7 +122,6 @@
 			isa = PBXGroup;
 			children = (
 				183A0AA827EFE5720095AAAB /* ContactsProvider.swift */,
-				183A0AAA27EFE5B10095AAAB /* StringExtension.swift */,
 				183A0AAC27EFE5DE0095AAAB /* ContactPickerView.swift */,
 				183A0AAE27EFE5FC0095AAAB /* ContactRowView.swift */,
 				183A0AB027EFEAE50095AAAB /* ContactDetailSheet .swift */,
@@ -162,11 +161,9 @@
 		18582C3327D577B100ABECD5 /* SafePeople */ = {
 			isa = PBXGroup;
 			children = (
-				1807D24627ED3CB900DFF8D3 /* Info.plist */,
-				18E18B8627DFD4BE007977B6 /* SafePeople.xcdatamodeld */,
-				1826BBE427E15CD5004DC52F /* UserSettings.swift */,
-				18E18B8927DFD4FF007977B6 /* Persistence.swift */,
 				18582C3427D577B100ABECD5 /* SafePeopleApp.swift */,
+				1807D24627ED3CB900DFF8D3 /* Info.plist */,
+				188B27DF2939C4C400CBCC27 /* Utilities */,
 				180E619527DC305500192330 /* Models */,
 				18582C4527D5998300ABECD5 /* Views */,
 				18582C4227D5986900ABECD5 /* Extensions */,
@@ -187,6 +184,7 @@
 		18582C4227D5986900ABECD5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				183A0AAA27EFE5B10095AAAB /* StringExtension.swift */,
 				18582C4327D5987800ABECD5 /* ColorManager.swift */,
 				189800DD27EA8F0700FAD879 /* Constants.swift */,
 			);
@@ -219,6 +217,24 @@
 				18582C4C27D5A20300ABECD5 /* HamburgerMenuButton.swift */,
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		188B27DF2939C4C400CBCC27 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				188B27E02939C4E600CBCC27 /* CoreData */,
+				1826BBE427E15CD5004DC52F /* UserSettings.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		188B27E02939C4E600CBCC27 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				18E18B8627DFD4BE007977B6 /* SafePeople.xcdatamodeld */,
+				18E18B8927DFD4FF007977B6 /* Persistence.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		189800DC27EA8E2A00FAD879 /* Resources */ = {

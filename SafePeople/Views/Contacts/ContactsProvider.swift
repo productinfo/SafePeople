@@ -21,23 +21,12 @@ class ContactsProvider {
                     guard let number = phoneNumber.value.value(forKey: "digits") as? String else { return nil }
                     return number
                 }
-                
                 contacts.append(Contact(firstName: contact.givenName, lastName: contact.familyName, phoneNumber: phoneNumberArrayString))
             })
         } catch let error {
             print("Failed to fetch contacts. \(error)")
         }
-        
-        contacts = contacts.sorted {
-            $0.firstName < $1.firstName
-        }
-        
+        contacts = contacts.sorted { $0.firstName < $1.firstName }
         return contacts
     }
-
-
-    
-    
-    
-    
 }
