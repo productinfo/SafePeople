@@ -15,10 +15,8 @@ struct ContactDetailSheet: View {
     let message = Message()
     var selectedContact: Contact
     @State var selectedNumberIndex = 0
-   
     @Binding var showPickerView: Bool
-    
-    
+
     var fullName: String {
         return "\(selectedContact.firstName) \(selectedContact.lastName)"
     }
@@ -26,17 +24,13 @@ struct ContactDetailSheet: View {
     var body: some View {
         VStack {
             Text(fullName)
-            
             Picker("Numbers", selection: $selectedNumberIndex) {
                 ForEach(selectedContact.phoneNumber, id: \.self)  { num in
                     Text(num ?? "")
-                    
                 }
             }
             .pickerStyle(InlinePickerStyle())
-            
-                
-            
+
             // Save Contact to core data
             Button {
                 // Save to core data
@@ -44,8 +38,7 @@ struct ContactDetailSheet: View {
                 newPerson.name = fullName
                 newPerson.number = selectedContact.phoneNumber[selectedNumberIndex]
                 newPerson.id = UUID()
-       
-                
+
                 // Sends message to contact when added
                 message.sendAddContactMsg(message: message.addContactMessage, phone: newPerson.number ?? "")
                 
@@ -56,9 +49,8 @@ struct ContactDetailSheet: View {
                 } catch {
                     print(error.localizedDescription)
                 }
-                
+
                 showPickerView.toggle()
-                
             } label: {
                 Text("Save")
             }
@@ -66,5 +58,3 @@ struct ContactDetailSheet: View {
         .navigationTitle("\(selectedContact.firstName) \(selectedContact.lastName)")
     }
 }
-
-

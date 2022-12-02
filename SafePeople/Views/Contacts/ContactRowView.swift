@@ -34,4 +34,3 @@ struct ContactRow: View {
         self.selectedContact = contact
     }
 }
-
