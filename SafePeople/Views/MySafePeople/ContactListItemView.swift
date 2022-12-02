@@ -17,11 +17,8 @@ struct ContactListItemView: View {
                     .font(.headline)
             }
             .foregroundColor(.accentColor)
-            
+        
             Spacer()
-            
         }
     }
 }
-
-

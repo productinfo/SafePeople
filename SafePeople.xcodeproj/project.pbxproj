@@ -114,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				1826BBE227E148CC004DC52F /* Message.swift */,
+				1821722527F4F49F000191DE /* Contact.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -126,7 +127,6 @@
 				183A0AAE27EFE5FC0095AAAB /* ContactRowView.swift */,
 				183A0AB027EFEAE50095AAAB /* ContactDetailSheet .swift */,
 				18B5A11327DD891000F0C89F /* AddContactView.swift */,
-				1821722527F4F49F000191DE /* Contact.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";

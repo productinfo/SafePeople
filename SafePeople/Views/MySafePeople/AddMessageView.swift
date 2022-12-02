@@ -7,79 +7,63 @@
 
 import SwiftUI
 
-
 struct AddMessageView: View {
     @EnvironmentObject private var userSettings: UserSettings
     @Environment (\.presentationMode) var presentationMode
     @State var newMessage = ""
 
-    
     var body: some View {
         NavigationView {
             VStack(spacing: 25) {
-                // TITLE
                 Group {
                     HStack {
                         Text("Add Custom Message")
                             .font(.title)
-                        .fontWeight(.bold)
-
+                            .fontWeight(.bold)
                         Spacer()
                     }
                     .padding(.horizontal)
                 }
-                
-                // INFORMATION
+
                 Group {
-                 
                     VStack(spacing: 10) {
-                           InfoCardView()
-                                .padding()
-                            
+                        InfoCardView()
+                            .padding()
+
                         Spacer()
                         
-                                Text("New Message")
-                                    .font(.headline)
-                                .foregroundColor(Color.accentColor)
-                             
-                                
+                        Text("New Message")
+                            .font(.headline)
+                            .foregroundColor(Color.accentColor)
+
                         Text(newMessage)
-                                    .font(.subheadline)
-                                    .multilineTextAlignment(.center)
-                                    .foregroundColor(.secondary)
-                                    .padding(.horizontal)
-                                    
-                        
-                           
-                            
-                            
+                            .font(.subheadline)
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(.secondary)
+                            .padding(.horizontal)
+
                         NeumorphicStyleTextField(textField: TextField("New Custom Message", text: $newMessage), imageName: "plus.message")
                             .padding()
-                            
-                            
-                            Button {
-                                // Save
-                                userSettings.customMessage = newMessage
-                                presentationMode.wrappedValue.dismiss()
-                        
-                            
-                            } label: {
-                                Text("Save")
-                                    .font(.headline)
-                                    .padding()
-                                    .background(Color.accentColor)
-                                    .foregroundColor(.white)
-                                    .cornerRadius(12)
-                            }
+
+                        Button {
+                            // Save
+                            userSettings.customMessage = newMessage
+                            presentationMode.wrappedValue.dismiss()
+                        } label: {
+                            Text("Save")
+                                .font(.headline)
+                                .padding()
+                                .background(Color.accentColor)
+                                .foregroundColor(.white)
+                                .cornerRadius(12)
+                        }
                     }
                     .padding()
                     Spacer()
-                } //: GROUP
-                
+                }
             }
             .background(Color.offWhite)
         }
-        
     }
 }
 

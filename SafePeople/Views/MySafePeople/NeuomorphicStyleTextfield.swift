@@ -13,7 +13,6 @@ struct NeumorphicStyleTextField: View {
     var body: some View {
         HStack {
             Image(systemName: imageName)
-            
             textField
                 .foregroundColor(.darkShadow)
         }
@@ -23,6 +22,5 @@ struct NeumorphicStyleTextField: View {
         .cornerRadius(6)
         .shadow(color: Color.darkShadow, radius: 3, x: 2, y: 2)
         .shadow(color: Color.lightShadow, radius: 3, x: -2, y: -2)
-            
-        }
+    }
 }

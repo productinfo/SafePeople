@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-
-
 struct SafePeopleView: View {
     @Environment(\.managedObjectContext) private var viewContext
     let defaultMsg = Message()
@@ -16,18 +14,84 @@ struct SafePeopleView: View {
     @State var showSideBar: Bool = false
     @State var showAddContactView: Bool = false
     @State var showAddMessageView: Bool = false
-   
-    
-
-    
-    
-    // Fetch Request
     @FetchRequest(entity: ContactsEntity.entity(), sortDescriptors: [])
     var persons: FetchedResults<ContactsEntity>
-    
-    
-    
-    // Functions
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 5) {
+            // My Safe People
+            Group {
+                HStack {
+                    Text("My Safe People")
+                        .font(.headline)
+                        .foregroundColor(Color.accentColor)
+                    Spacer()
+                    Button {
+                        showAddContactView.toggle()
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                }
+                // List Contacts
+                List {
+                    ForEach(persons) { person in
+                        ContactListItemView(person: person)
+                            .padding()
+                            .listRowSeparatorTint(.accentColor, edges: .all)
+                    }
+                    .onDelete(perform: deletePerson(at:))
+
+                    if persons.count == 0 {
+                        HStack {
+                            Image(systemName: "exclamationmark.circle")
+                            Text("Please add a Safe Person.")
+                        }
+                        .font(.headline)
+                        .foregroundColor(Color.accentColor)
+                    }
+                }
+                .toolbar {
+                    EditButton()
+                }
+            }
+            Spacer()
+
+            // Custom Message
+            Group {
+                VStack(alignment: .leading, spacing: 10) {
+                    HStack {
+                        Text("Custom Message")
+                            .font(.headline)
+                            .foregroundColor(Color.accentColor)
+                        Spacer()
+                        Button {
+                            // edit message view
+                            showAddMessageView.toggle()
+                        } label: {
+                            Text("edit")
+                                .font(.subheadline)
+                        }
+                    }
+                    MessageCardView(text: userSettings.customMessage)
+                        .padding()
+                }
+            }
+        }
+        .padding()
+        .sheet(isPresented: $showAddContactView) {
+            AddContactView()
+        }
+        .sheet(isPresented: $showAddMessageView) {
+            AddMessageView()
+        }
+        .background(Color.offWhite.edgesIgnoringSafeArea(.all))
+        .onAppear() {
+            UITableView.appearance().backgroundColor = .clear
+            UITableViewCell.appearance().backgroundColor = .white
+        }
+        .navigationTitle("My Safe People")
+    }
+
     func deletePerson(at offsets: IndexSet) {
         for index in offsets {
             let person = persons[index]
@@ -35,114 +99,6 @@ struct SafePeopleView: View {
         }
         try? viewContext.save()
     }
-    
-
-    
-    
-    // Body
-    var body: some View {
-        
-            VStack(alignment: .leading, spacing: 5) {
-                
-                // My Safe People
-                Group {
-                    HStack {
-                        Text("My Safe People")
-                            .font(.headline)
-                            .foregroundColor(Color.accentColor)
-                        
-                        Spacer()
-                        Button {
-                            showAddContactView.toggle()
-                        } label: {
-                            Image(systemName: "plus")
-                        }
-                        
-                        
-                    }
-                    
-                    // List Contacts
-                    List {
-                        ForEach(persons) { person in
-                            ContactListItemView(person: person)
-                                .padding()
-                                .listRowSeparatorTint(.accentColor, edges: .all)
-                            
-                        }
-                        .onDelete(perform: deletePerson(at:))
-                        
-                        if persons.count == 0 {
-                            HStack {
-                                Image(systemName: "exclamationmark.circle")
-                                Text("Please add a Safe Person.")
-                            }
-                            .font(.headline)
-                            .foregroundColor(Color.accentColor)
-                            
-                        }
-                    }
-                    
-                    .toolbar {
-                        EditButton()
-                    }
-                    
-                } //: GROUP
-                
-                Spacer()
-                
-                // Custom Message
-                Group {
-                    VStack(alignment: .leading, spacing: 10) {
-                        HStack {
-                            Text("Custom Message")
-                                .font(.headline)
-                                .foregroundColor(Color.accentColor)
-                            Spacer()
-                            
-                            Button {
-                                // edit message view
-                                showAddMessageView.toggle()
-                            } label: {
-                                Text("edit")
-                                    .font(.subheadline)
-                            }
-                            
-                        }
-                        
-                        MessageCardView(text: userSettings.customMessage)
-                            .padding()
-                        
-                        
-                    }
-                    
-                    
-                } //: GROUP
-                
-
-            }
-            .padding()
-            .sheet(isPresented: $showAddContactView) {
-                AddContactView()
-            }
-            .sheet(isPresented: $showAddMessageView) {
-                AddMessageView()
-            }
-            .background(Color.offWhite.edgesIgnoringSafeArea(.all))
-            .onAppear() {
-                UITableView.appearance().backgroundColor = .clear
-                UITableViewCell.appearance().backgroundColor = .white
-                          }
-            .navigationTitle("My Safe People")
-        
-        
-        
-        
-        
-        
-        
-        
-    }
-    
 }
 
 struct SafePeopleView_Previews: PreviewProvider {
