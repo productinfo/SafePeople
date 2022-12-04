@@ -1,5 +1,4 @@
 # SafePeople
-Safe People App
 
 SafePeople is an app geared toward individuals who are struggling with addiction, anxiety, depression, or just need a little help reaching out for support from their trusted people.
 
